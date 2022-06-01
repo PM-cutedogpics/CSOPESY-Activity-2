@@ -18,7 +18,7 @@ public class DiningPhilosopher {
         if(states[i] != "EATING") {
             try{
                 // STATE: WAITING
-                chopsticks[i].wait();
+                chopsticks[i].await();
             } catch (InterruptedException e) {
                 System.out.println("ERROR: Philosopher " + i + " failed to wait");
                 e.printStackTrace();
@@ -47,7 +47,7 @@ public class DiningPhilosopher {
      */
     void test(int i) {
         // If left and right philosophers are NOT eating && current philosopher is hungry
-        if (states[(i+4) % 5] != "EATING" && states[(i+4) % 1] != "EATING" && states[i] == "HUNGRY") {
+        if (states[(i+4) % 5] != "EATING" && states[(i+1) % 5] != "EATING" && states[i] == "HUNGRY") {
             // STATE: ACQUIRED LEFT AND RIGHT CHOPSTICK -> EATING
             states[i] = "EATING";
             System.out.println("Philosopher " + i + " acquired its left and right chopsticks.");

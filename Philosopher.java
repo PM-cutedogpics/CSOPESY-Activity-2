@@ -23,12 +23,14 @@ public class Philosopher extends Thread{
             while (true) {
                 // Back to thinking
                 System.out.println("Philosopher " + id + " is thinking.");
-                Thread.sleep(rng.nextInt(5000 - 1000 + 1) + 1000);
+                //Thread.sleep(rng.nextInt(5000 - 1000 + 1) + 1000);
+                Thread.sleep(2000);
 
                 // Try to pickup and eat
                 dp.pickup(id);
                 System.out.println("Philosopher " + id + " is eating.");
-                Thread.sleep(rng.nextInt(5000 - 1000 + 1) + 1000);
+                //Thread.sleep(rng.nextInt(5000 - 1000 + 1) + 1000);
+                Thread.sleep(2000);
 
                 // Drop
                 dp.putdown(id);
